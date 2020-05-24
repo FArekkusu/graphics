@@ -2,7 +2,7 @@ from PIL import Image
 from scipy import ndimage
 
 
-def min_max_mean_filter(path):
+def min_max_median_filter(path):
     img = Image.open(path)
     for filter_type in ("minimum", "maximum", "median"):
         new_img = getattr(ndimage.filters, f"{filter_type}_filter")(img, 5)
