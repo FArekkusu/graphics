@@ -7,6 +7,7 @@ def laplacian(path):
     new_path = path.rsplit(".", 1)[0] + "_laplacian_filtered.png"
     Image.fromarray(new_img).save(new_path)
 
+
 def sobel(path):
     img = cv2.imread(path)
     for i, direction in enumerate(("x", "y")):
