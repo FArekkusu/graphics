@@ -7,8 +7,8 @@ def clamp(arr, min_, max_):
     return np.asarray(arr / 255 * (max_ - min_) + min_).astype(np.uint8)
 
 
-def gray_level_transformation(path):
+def gray_level_transformation(path, min_, max_):
     img = Image.open(path)
-    clamped = clamp(array(img), 0, 100)
-    new_path = path.rsplit(".", 1)[0] + "_gray_level_transformed.png"
+    clamped = clamp(array(img), min_, max_)
+    new_path = path.rsplit(".", 1)[0] + f"_gray_level_{min_}_{max_}_transformed.png"
     Image.fromarray(clamped).save(new_path)

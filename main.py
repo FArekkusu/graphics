@@ -4,12 +4,17 @@ from laplacian_sobel import laplacian, sobel
 
 
 if __name__ == "__main__":
-    functions = [
-        gray_level_transformation,
-        min_max_median_filter,
-        laplacian,
-        sobel
-    ]
+    path = "images/profile.png"
 
-    for f in functions:
-        f("images/profile.png")
+    gray_level_transformation(path, 0, 100)
+    gray_level_transformation(path, 155, 255)
+
+    min_max_median_filter(path)
+    min_max_median_filter(path, size=3)
+
+    laplacian(path)
+    laplacian(path, ksize=3)
+    laplacian(path, ksize=5)
+
+    sobel(path)
+    sobel(path, ksize=5)
