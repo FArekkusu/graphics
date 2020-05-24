@@ -1,5 +1,5 @@
 from gray_level import gray_level_transformation
-from min_max_mean import min_max_mean_filter
+from min_max_median import min_max_median_filter
 from laplacian_sobel import laplacian, sobel
 
 
