@@ -1,6 +1,7 @@
 from PIL import Image
 import cv2
 
+
 def laplacian(path):
     img = cv2.imread(path)
     new_img = cv2.Laplacian(img, -1)
